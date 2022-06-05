@@ -3,7 +3,7 @@
   import Header from './lib/components/Header.svelte'
 
   let commandTxt:string
-  let help:boolean = true
+  let help:boolean = false
   let errorMsg:string
 
   let display:string
@@ -52,6 +52,8 @@
         <li class='grid grid-cols-6'>links<span class='col-span-5'>list of social media links</span></li>
       </ul>
     </div>
+  {:else if display}
+    <p>{display}</p>
   {/if}
   <div class='flex font-ibm text-sm my-2'>
     <span class='italic mr-2'>guest@andrewriggs$:</span>
