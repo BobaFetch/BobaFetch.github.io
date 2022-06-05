@@ -69,6 +69,7 @@
         <li class='grid grid-cols-6'>about <span class='col-span-5'>display information about andrew riggs</span></li>
         <li class='grid grid-cols-6'>stack<span class='col-span-5'>display my tech stack</span></li>
         <li class='grid grid-cols-6'>links<span class='col-span-5'>list of social media links</span></li>
+        <li class='grid grid-cols-6'>modern<span class='col-span-5'>switch to modern UI</span></li>
       </ul>
     </div>
   {/if}
@@ -77,7 +78,7 @@
   {/if}
   <div class='flex font-ibm text-sm my-2'>
     <span class='italic mr-2'>guest@andrewriggs$:</span>
-    <input type="text" class='w-3/4 bg-slate-900 outline-none' bind:value={commandTxt} on:keypress={handleKeyPress} autofocus>
+    <input type="text" class='w-3/4 bg-slate-900 outline-none' bind:value={commandTxt} on:keypress={handleKeyPress} >
   </div>
 </div>
 {/if}
