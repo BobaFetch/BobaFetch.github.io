@@ -3,6 +3,7 @@
   import Header from './lib/components/Header.svelte'
   import About from './lib/components/About.svelte'
   import Stack from './lib/components/Stack.svelte'
+  import NormalView from "./lib/components/NormalView.svelte";
 
   const componentMap = {
     About,
@@ -14,6 +15,7 @@
   let errorMsg:string
 
   let Display
+  let view:string = 'retro'
 
   function handleKeyPress(e) {
     if (e.keyCode === 13) {
@@ -34,6 +36,11 @@
             Display = componentMap['About']
             commandTxt = ''
           break;
+
+        case 'modern':
+        case '--modern':
+          view = 'modern'
+          break;
       
         default:
           errorMsg = `${commandTxt} is not recoginized as a command`
@@ -47,6 +54,9 @@
 
 <TailwindCss />
 
+{#if view === 'modern'}
+  <NormalView bind:view/>
+{:else}
 <div class='bg-slate-900 text-gray-400 m-3 font-ibm'>
   <Header />
   {#if help}
@@ -70,6 +80,7 @@
     <input type="text" class='w-3/4 bg-slate-900 outline-none' bind:value={commandTxt} on:keypress={handleKeyPress} autofocus>
   </div>
 </div>
+{/if}
 
 <style lang='postcss'>
   :root {
