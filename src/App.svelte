@@ -1,16 +1,25 @@
 <script lang="ts">
   import TailwindCss from "./TailwindCSS.svelte";
   import Header from './lib/components/Header.svelte'
+  import About from './lib/components/About.svelte'
+  import Stack from './lib/components/Stack.svelte'
+
+  const componentMap = {
+    About,
+    Stack
+  }
 
   let commandTxt:string
   let help:boolean = false
   let errorMsg:string
 
-  let display:string
+  let Display
 
   function handleKeyPress(e) {
     if (e.keyCode === 13) {
       errorMsg = null
+      Display = null
+      help = false
       switch (commandTxt) {
         case 'help':
         case '-help':
@@ -22,7 +31,7 @@
         case 'about':
         case '--about':
         case '-a':
-            display = 'About me'
+            Display = componentMap['About']
             commandTxt = ''
           break;
       
@@ -52,8 +61,9 @@
         <li class='grid grid-cols-6'>links<span class='col-span-5'>list of social media links</span></li>
       </ul>
     </div>
-  {:else if display}
-    <p>{display}</p>
+  {/if}
+  {#if Display}
+    <Display />
   {/if}
   <div class='flex font-ibm text-sm my-2'>
     <span class='italic mr-2'>guest@andrewriggs$:</span>
