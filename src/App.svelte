@@ -15,7 +15,7 @@
   let errorMsg:string
 
   let Display
-  let view:string = 'retro'
+  let view:string = 'modern'
 
   function handleKeyPress(e) {
     if (e.keyCode === 13) {
