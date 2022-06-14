@@ -19,5 +19,8 @@ export const projects = [
 ];
 
 export const about = `
-  Here to drink beers and trigger the queers... and I'm all out of beer
+  Self taught developer with a non-traditional backgound. 
+  I got into fullstack development after years of working in the aerospace industry.
+  Finding a need to stay updated on the progress of jobs coming through the shop,
+  I wrote a web app which did just that. From there I continued to keep learning.
 `;

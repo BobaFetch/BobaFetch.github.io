@@ -1,6 +1,6 @@
 <script>
   import { fly } from 'svelte/transition'
-  import { projects } from '../data.ts'
+  import { projects } from '../data'
   import { Icon } from '@steeze-ui/svelte-icon'
   import { ChevronLeft, ChevronRight } from '@steeze-ui/feather-icons'
   import { onDestroy, onMount } from 'svelte';
