@@ -1,6 +1,7 @@
 <script>
   import Footer from "./Footer.svelte";
   import Projects from "./Projects.svelte";
+  import { about } from '../data'
 
   const src = 'images/placeholder.jpeg'
   let colorMode = 'light'
@@ -8,7 +9,6 @@
 </script>
 
 <div class={`${colorMode} flex flex-col md:grid md:grid-cols-12 gap-1 h-screen pb-3`}>
-
   <div class="md:col-span-6 mx-2 md:py-3 pt-3">
     <div class="flex flex-col gap-2">
       <div class={`${colorMode}-container border border-slate-900 flex flex-col items-center p-3 rounded-lg`}>
@@ -42,9 +42,10 @@
 
       <div class={`${colorMode}-container border border-black p-3 rounded-lg`}>
         <h3 class='text-4xl font-thin text-center'>ABOUT</h3>
-        <p>
+        <!-- <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </p>
+        </p> -->
+        <p>{about}</p>
       </div>
     </div>
   </div>

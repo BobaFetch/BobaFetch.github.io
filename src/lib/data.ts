@@ -17,3 +17,7 @@ export const projects = [
     src: '',
   },
 ];
+
+export const about = `
+  Here to drink beers and trigger the queers... and I'm all out of beer
+`;
