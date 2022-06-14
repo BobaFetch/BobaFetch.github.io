@@ -5,7 +5,7 @@ export const projects = [
     description: `Web app built for a mid-sized aerospace company to help in tracking of jobs across the plant.\n
        Pulls data on 8000+ jobs 
       `,
-    tech: 'SvelteKit, Golang, Sql Server, TailwindCSS',
+    tech: ['SvelteKit', 'Golang', 'Sql Server', 'TailwindCSS'],
     src: '',
   },
   {
@@ -13,7 +13,7 @@ export const projects = [
     name: '"Rick & Morty" Random Quote Generator',
     description:
       'Generates a random quote from the television series "Rick & Morty"',
-    tech: 'HTML, JavaScript, CSS',
+    tech: ['HTML', 'JavaScript', 'CSS'],
     src: '',
   },
 ];

@@ -57,7 +57,7 @@
 {#if view === 'modern'}
   <NormalView bind:view/>
 {:else}
-<div class='bg-slate-900 text-gray-400 m-3 font-ibm'>
+<div class='text-gray-400 m-3 font-ibm'>
   <Header />
   {#if help}
     <div class='text-sm my-2'>
@@ -83,9 +83,3 @@
 </div>
 {/if}
 
-<style lang='postcss'>
-  :root {
-    @apply
-      bg-slate-900;
-  }
-</style>

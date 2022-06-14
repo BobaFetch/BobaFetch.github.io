@@ -26,37 +26,51 @@
    }
   }
 
-  onMount(() => {
+  function scrollProjects() {
     myInterval = setInterval(() => {
-    if (projectKey >= projects.length) {
-      projectKey = 1
-    } else {
-      projectKey++
-    }
-  }, 5000)
+      if (projectKey >= projects.length) {
+        projectKey = 1
+      } else {
+        projectKey++
+      }
+    }, 8000)
+  }
+
+  function stopScroll() {
+    clearInterval(myInterval)
+  }
+
+  onMount(() => {
+   scrollProjects()
   })
 
-  onDestroy(() => clearInterval(myInterval))
+  onDestroy(() => stopScroll())
 </script>
 
-<div class={`${colorMode}-container rounded-lg relative h-full`}>
+<div class={`${colorMode}-container rounded-lg relative h-full p-3`}>
   {#each projects as project}
     {#if project.key === projectKey}
-      <div in:fly={{x:200, duration: 300}}>
-        <h3 class='p-3 text-2xl font-light italic text-center'>{project.name}</h3>
-        <p class='p-3'>{project.description}</p>
+      <div in:fly={{x:200, duration: 300}} on:mouseenter={stopScroll} on:mouseleave={scrollProjects}>
+        <h3 class='text-2xl font-light italic text-center'>{project.name}</h3>
+        <p class=''>{project.description}</p>
+        <h4 class='text-center text-xl font-light'>STACK</h4>
+        <ul>
+          {#each project.tech as tech}
+            <li>{tech}</li>
+          {/each}
+        </ul>
       </div>
         <!-- only display buttons when needed -->
         <button 
           on:click|preventDefault={handleProject} value='prev'
-          class='absolute left-0 top-0 h-full text-gray-400 hover:text-white opactiy-5 hover:opacity-100 cursor-pointer'
+          class='absolute left-0 top-0 h-full text-gray-400 hover:text-white opacity-25 hover:opacity-100 cursor-pointer'
         >
-          <Icon src={ChevronLeft} size={'50'} class='stroke-1' />
+          <Icon src={ChevronLeft} size={'30'} class='stroke-1' />
         </button>
         <button 
           on:click={handleProject} value='next'
-          class='absolute right-0 top-0  h-full hover:text-white hover:blur-sm cursor-pointer'>
-          <Icon src={ChevronRight} size={'50'} class='stroke-1' />
+          class='absolute right-0 top-0  h-full text-gray-400 hover:text-white opacity-25 hover:opacity-100 cursor-pointer'>
+          <Icon src={ChevronRight} size={'30'} class='stroke-1' />
         </button>
     {/if}
   {/each}

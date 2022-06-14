@@ -16,7 +16,7 @@
       </a>
     <!-- </circle> -->
   <!-- </svg> -->
-      <a href='https://Twitter.com/bobafetch' class="border border-slate-900 w-fit h-fit rounded-full m-2 cursor-pointer hover:animate-pulse bg-gray-100">
+      <a href='https://Twitter.com/fetch_name' class="border border-slate-900 w-fit h-fit rounded-full m-2 cursor-pointer hover:animate-pulse bg-gray-100">
         <Icon src={Twitter} size=50 class='stroke-slate-900 stroke-1 p-2'></Icon>
       </a>
       <a href='https://www.linkedin.com/in/andrew-riggs-09340763/' class="border border-slate-900 w-fit h-fit rounded-full m-2 cursor-pointer hover:animate-pulse bg-gray-100">
